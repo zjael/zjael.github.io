@@ -1,4 +1,4 @@
-import '../scss/style.scss';
+import '../css/style.css';
 import * as config from './lib/config.js';
 import * as dom from './lib/dom.js';
 import * as caret from './lib/caret.js';
