@@ -1,0 +1,30 @@
+button, .button, .btn {
+  display: inline-block;
+  text-align: center;
+  font-family: Munro;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: $text-color;
+  background-color: $foreground-alt-color;
+  border-radius: 5px;
+  padding: 0.2rem;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  text-transform: none;
+	-webkit-appearance: none;
+  -moz-appearance: none;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+.btn-small {
+  font-size: 0.8rem;
+}
+
+.btn-large {
+	font-size: 1.6rem;
+	padding: 0.8rem 1.2rem;
+}

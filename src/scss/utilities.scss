@@ -1,0 +1,148 @@
+$sides: (
+  "t": "top",
+  "b": "bottom",
+  "l": "left",
+  "r": "right",
+);
+
+@for $i from 0 through 32 {
+  $value: $i / 4;
+  .m-#{$value} {
+    margin: #{$value}rem;
+  }
+
+  .mx-#{$i} {
+    margin-left: #{$value}rem;
+    margin-right: #{$value}rem;
+  }
+
+  .my-#{$i} {
+    margin-top: #{$value}rem;
+    margin-bottom: #{$value}rem;
+  }
+
+  .p-#{$i} {
+    padding: #{$value}rem;
+  }
+
+  .px-#{$i} {
+    padding-left: #{$value}rem;
+    padding-right: #{$value}rem;
+  }
+
+  .py-#{$i} {
+    padding-top: #{$value}rem;
+    padding-bottom: #{$value}rem;
+  }
+
+  @each $prefix, $side in $sides {
+    .m#{str-slice($prefix, 0, 1)}-#{$i} {
+      margin-#{$side}: #{$value}rem;
+    }
+
+    .p#{str-slice($prefix, 0, 1)}-#{$i} {
+      padding-#{$side}: #{$value}rem;
+    }
+  }
+}
+
+.flex {
+  display:flex;
+  &.flex-col {
+    flex-direction: column;
+  }
+  &.start {
+    justify-content: flex-start;
+  }
+  &.center {
+    justify-content: center;
+  }
+  &.end {
+    justify-content: flex-end;
+  }
+  &.space-between {
+    justify-content: space-between;
+  }
+  &.space-around {
+    justify-content: space-around;
+  }
+  &.align-center {
+    align-items: center;
+  }
+  &.wrap {
+    flex-wrap: wrap;
+  }
+  @for $i from 1 through 12 {
+    .flex-#{$i} {
+      flex: $i;
+    }
+  }
+}
+
+.full-width {
+  width: 100%;
+}
+
+.block {
+  display: block;
+}
+
+.inline {
+  display: inline;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.mx-auto {
+  margin: 0 auto;
+}
+
+.my-auto {
+  margin: auto 0;
+}
+
+.center {
+  text-align: center !important;
+}
+
+.rounded {
+  border-radius: 10rem;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.normal {
+  font-weight: normal;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.bolder {
+  font-weight: bolder;
+}

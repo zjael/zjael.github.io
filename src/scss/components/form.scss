@@ -1,0 +1,16 @@
+label {
+	display: inline-block;
+	margin-right: 0.4rem;
+}
+
+input {
+	display: block;
+	font-family: Munro;
+	font-size: 2.2vh;
+	color: $text-color;
+	border: none;
+	flex: 1;
+	background-color: $foreground-alt-color;
+	caret-color: $primary;
+	margin-bottom: 0.4rem;
+}
