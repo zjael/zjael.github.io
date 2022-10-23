@@ -3,22 +3,19 @@
 	src: url(../fonts/munro/Munro.ttf);
 }
 
-/*
-=====================
-COLORS
-=====================
-*/
+@import "./reboot.css";
+@import "./colors.css";
 
+@import "./components/button.css";
+@import "./components/modal.css";
+@import "./components/form.css";
 
-/*
-=====================
-GENERAL
-=====================
-*/
+.foreground-alt {
+  background-color: var(--foreground-alt-color);
+}
 
-* {
-	margin: 0;
-	padding: 0;
+.foreground {
+  background-color: var(--foreground-color);
 }
 
 html,
@@ -27,7 +24,7 @@ body {
 }
 
 body {
-	background-color: rgb(30, 30, 45);
+	background-color: rgb(16, 16, 20);
 	color: #979c9b;
 	font-family: Munro;
 	font-size: 2.2vh;
@@ -58,39 +55,21 @@ a:hover {
 	color: #474747;
 }
 
-/*
-=====================
-STAGING
-=====================
-*/
-
-footer {
-	display: none;
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-	font-size: 2vh;
-	background-color: transparent;
-	text-align: center;
-	padding: 0.3vh 0 0.3vh 0;
-}
-
-/*
-=====================
-CLASSES & IDS
-=====================
-*/
-
 .links {
 	display: none;
 	margin-top: 4vh;
-	text-align: center; 
+	text-align: center;
 }
 .links ul {
 	vertical-align: top;
 	display: inline-block;
 	list-style: none;
 	margin: 0 0.5vw 0 0.5vw;
+}
+
+#nav {
+	margin: 1rem;
+	float: right;
 }
 
 #search-field {
@@ -101,9 +80,8 @@ CLASSES & IDS
 	transform: translate(-50%, -50%);
 	min-width: 200px;
 	max-width: 950px;
-	height: 12vh;
+	height: 20vh;
 	width: 100%;
-	overflow: hidden;
 
 	text-align: center;
 	font-family: Munro;
@@ -121,11 +99,6 @@ CLASSES & IDS
     user-select: none;
 }
 
-input {
-	width: 0;
-	height: 0;
-	opacity: 0;
-}
 #hidden {
 	position: fixed;
     padding:0;
@@ -135,6 +108,12 @@ input {
     width: 100%;
 	height: 100%;
 	z-index: -1;
+}
+
+#hidden input {
+	width: 0;
+	height: 0;
+	opacity: 0;
 }
 
 #query {
@@ -155,9 +134,9 @@ input {
 }
 #output {
 	display: block;
-	text-align: center;
 	font-size: 2.2vh;
 	white-space: pre;
+	text-align: center;
 
 	-webkit-touch-callout: text;
     -webkit-user-select: text;
@@ -165,52 +144,4 @@ input {
     -moz-user-select: text;
     -ms-user-select: text;
     user-select: text;
-}
-
-.weather {
-	display: table;
-	margin: 0.5vh auto;
-	padding-bottom: 70px;
-	color: inherit; 
-}
-.weather * {
-	font-size: 2vh;
-	font-weight: 300;
-}
-
-.weather .condition {
-	  color: #92d690; 
-}
-
-#cryptos {
-	position: absolute;
-	top: 0px;
-	width: 100%;
-	margin: 3vh auto;
-	text-align: center;
-	color: #979c9b;
-	font-size: 1.8vh;
-}
-
-#cryptos li {
-	display: inline-block;
-	list-style: none;
-	/* text-align: left; */
-	margin: 1vh 0.5vw 1vh 0.5vw;
-}
-
-#cryptos p {
-	position: relative;
-	font-size: 2vh;
-	text-align: center;
-	margin: 0.2vh 0 0 0;
-}
-
-#cryptos span {
-	font-size: 1.4vh;
-}
-
-.price_change {
-	display: block;
-	font-size: 1.6vh;
 }
