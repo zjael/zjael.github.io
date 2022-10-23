@@ -31,6 +31,10 @@ jobs:
         node-version: '16.x'
     - run: npm ci
     - run: npm run build --if-present
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v1
+      with:
+        path: '/dist'
     
   deploy:
     runs-on: ubuntu-latest
@@ -39,14 +43,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Pages
-        uses: actions/configure-pages@v2
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: '/dist'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
